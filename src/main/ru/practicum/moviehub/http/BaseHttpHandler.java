@@ -27,6 +27,16 @@ public abstract class BaseHttpHandler implements HttpHandler {
         this.gson = new GsonBuilder().setPrettyPrinting().create();
     }
 
+    public void handle(HttpExchange exchange) throws IOException {
+        try {
+            String method = exchange.getRequestMethod();
+            String path = exchange.getRequestURI().getPath();
+
+            switch (method) {
+            }
+        } catch (Exception e) {
+        }
+    }
 
     void handleGetRequest(HttpExchange exchange, String path) throws IOException {
     }

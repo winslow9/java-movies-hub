@@ -17,6 +17,7 @@ public class MoviesHandler extends BaseHttpHandler {
         super(moviesStore);
     }
 
+    @Override
     public void handle(HttpExchange exchange) throws IOException {
         try {
             String method = exchange.getRequestMethod();
