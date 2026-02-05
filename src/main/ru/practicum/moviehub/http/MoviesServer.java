@@ -19,7 +19,7 @@ public class MoviesServer {
 
     public void start() throws IOException {
         server = HttpServer.create(new InetSocketAddress(port), 0);
-        server.createContext("/movies", new BaseHttpHandler(moviesStore));
+        server.createContext("/movies", new MoviesHandler(moviesStore));
         server.start();
 
         System.out.println("Сервак стартанул");
