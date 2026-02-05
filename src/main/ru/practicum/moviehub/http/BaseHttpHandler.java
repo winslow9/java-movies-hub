@@ -33,8 +33,18 @@ public abstract class BaseHttpHandler implements HttpHandler {
             String path = exchange.getRequestURI().getPath();
 
             switch (method) {
+                case "GET":
+                    break;
+                case "POST":
+                    break;
+                case "DELETE":
+                    break;
+                default:
+                    sendErrorResponse(exchange, 405, "Method Not Allowed");
             }
         } catch (Exception e) {
+            e.printStackTrace();
+            sendErrorResponse(exchange, 500, "Internal Server Error", e.getMessage());
         }
     }
 
